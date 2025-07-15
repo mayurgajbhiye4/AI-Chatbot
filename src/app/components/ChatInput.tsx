@@ -6,14 +6,15 @@ import { useState } from "react";
 interface ChatInputProps {
   onSendMessage: (message: string) => void;
   isLoading?: boolean;
+  disabled?: boolean;
 }
 
-export function ChatInput({ onSendMessage, isLoading }: ChatInputProps) {
+export function ChatInput({ onSendMessage, isLoading, disabled }: ChatInputProps) {
   const [message, setMessage] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (message.trim() && !isLoading) {
+    if (message.trim() && !isLoading && !disabled) {
       onSendMessage(message.trim());
       setMessage("");
     }
@@ -34,12 +35,12 @@ export function ChatInput({ onSendMessage, isLoading }: ChatInputProps) {
         onKeyDown={handleKeyDown}
         placeholder="Describe the landing page you want to create..."
         className="min-h-[60px] resize-none"
-        disabled={isLoading}
+        disabled={isLoading || disabled}
       />
       <Button 
         type="submit" 
         size="icon" 
-        disabled={!message.trim() || isLoading}
+        disabled={!message.trim() || isLoading || disabled}
         className="h-[60px] w-[60px] flex-shrink-0"
       >
         {isLoading ? (
