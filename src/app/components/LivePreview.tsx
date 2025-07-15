@@ -28,7 +28,7 @@ export function LivePreview({ code }: LivePreviewProps) {
       const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
       if (iframeDoc) {
         iframeDoc.open();
-        iframeDoc.write(code);
+        iframeDoc.write(String(code));
         iframeDoc.close();
       }
     }
@@ -37,7 +37,7 @@ export function LivePreview({ code }: LivePreviewProps) {
   const openInNewTab = () => {
     const newWindow = window.open();
     if (newWindow && code) {
-      newWindow.document.write(code);
+      newWindow.document.write(String(code));
       newWindow.document.close();
     }
   };
@@ -47,7 +47,7 @@ export function LivePreview({ code }: LivePreviewProps) {
   }, [code]);
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-full min-h-0">
       <div className="flex items-center justify-between p-3 border-b bg-muted/50">
         <h3 className="font-medium text-sm">Live Preview</h3>
         <div className="flex gap-1">

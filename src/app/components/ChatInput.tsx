@@ -33,7 +33,7 @@ export function ChatInput({ onSendMessage, isLoading, disabled }: ChatInputProps
         value={message}
         onChange={(e) => setMessage(e.target.value)}
         onKeyDown={handleKeyDown}
-        placeholder="Describe the landing page you want to create..."
+        placeholder="Create a minimalist landing page for a UI/UX designer..."
         className="min-h-[60px] resize-none"
         disabled={isLoading || disabled}
       />
