@@ -14,9 +14,9 @@ export function useChat() {
     {
       id: "welcome",
       content: `Welcome to TechLander. Create any type of landing page for your business. Build something like:
-                \n• Create a landing page for a SaaS product that helps freelancers track income and expenses. 
-                \n• Design a website for a cozy vegan cafe in Brooklyn.
-                \n• Design a product landing page for a new line of eco-friendly running shoes.
+                \n• Build a landing page for a cozy Italian restaurant with a full menu, reservation form, and Google Maps location.
+                \n• Design a landing page for a fashion e-commerce brand with product carousel, limited-time offers, and customer testimonials.
+                \n• Create a yoga studio homepage with class schedules, instructor bios, and membership pricing.
                 `,
       isUser: false,
     },
