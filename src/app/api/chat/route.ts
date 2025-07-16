@@ -47,23 +47,64 @@ Your task is to generate a complete, production-ready HTML and CSS landing page 
 19. Tech conference – Speaker list, Agenda, Ticket pricing.
 20. Product pre-launch – Email capture, Teaser video, Countdown.
 
-📌 Instructions:
-- Choose the best-fitting template automatically based on the user prompt.
-- Generate a single, self-contained HTML document with embedded CSS inside a <style> tag.
-- Use semantic HTML5 (<header>, <main>, <section>, etc.) and clean, modern CSS.
-- Follow WCAG accessibility standards and ensure mobile-first responsiveness.
-- Use Figma-style layout structure: responsive grids, consistent spacing, alignment, and modular sections.
-
 🖼️ For all images:
-- Always use valid, working image URLs.
+- Always use pre-approved, valid Unsplash image URLs from this pool:
+
+  {
+    "tech_saas": {
+      "saas_dashboard": "https://images.unsplash.com/photo-1581093588401-12c3d87f3aeb?auto=format&fit=crop&w=1600&q=80",
+      "teamwork": "https://images.unsplash.com/photo-1591696205602-2f950c417cb9?auto=format&fit=crop&w=1600&q=80",
+      "developer_desk": "https://images.unsplash.com/photo-1537432376769-00aade6a1f60?auto=format&fit=crop&w=1600&q=80",
+      "app_showcase": "https://images.unsplash.com/photo-1573164574230-ec8d0e4c5b81?auto=format&fit=crop&w=1600&q=80"
+    },
+    "food_hospitality": {
+      "italian_restaurant": "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1600&q=80",
+      "coffee_shop": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1600&q=80",
+      "food_delivery": "https://images.unsplash.com/photo-1546069901-eacef0df6022?auto=format&fit=crop&w=1600&q=80"
+    },
+    "personal_brands": {
+      "ux_portfolio": "https://images.unsplash.com/photo-1611078489935-2ac0e2d2632a?auto=format&fit=crop&w=1600&q=80",
+      "photographer_site": "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=1600&q=80",
+      "author_page": "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1600&q=80"
+    },
+    "ecommerce": {
+      "fashion_brand": "https://images.unsplash.com/photo-1521335629791-ce4aec67ddaf?auto=format&fit=crop&w=1600&q=80",
+      "smartwatch_product": "https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=1600&q=80"
+    },
+    "fitness_wellness": {
+      "fitness_coach": "https://images.unsplash.com/photo-1594737625785-c0b6b0ae7d56?auto=format&fit=crop&w=1600&q=80",
+      "yoga_studio": "https://images.unsplash.com/photo-1583337130417-3346a1f1d7f1?auto=format&fit=crop&w=1600&q=80"
+    },
+    "education": {
+      "coding_bootcamp": "https://images.unsplash.com/photo-1591696331114-021edc9f78a9?auto=format&fit=crop&w=1600&q=80",
+      "school_homepage": "https://images.unsplash.com/photo-1596495577886-d920f1fb7238?auto=format&fit=crop&w=1600&q=80"
+    },
+    "business_agency": {
+      "digital_agency": "https://images.unsplash.com/photo-1531497865144-0464ef8fbf31?auto=format&fit=crop&w=1600&q=80",
+      "consulting_firm": "https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?auto=format&fit=crop&w=1600&q=80"
+    },
+    "events_campaigns": {
+      "tech_conference": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1600&q=80",
+      "product_prelaunch": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80"
+    }
+  }
+
+- If the design prompt doesn’t match a known category above, you may fall back to keyword-based placeholders from source.unsplash.com like:
+  - https://source.unsplash.com/1600x900/?technology
+  - https://source.unsplash.com/1600x900/?teamwork
+  - https://source.unsplash.com/1600x900/?fitness
+  - https://source.unsplash.com/1600x900/?restaurant
+
 - Never leave an image blank or broken.
-- Ensure **key feature images** (e.g., under “Features” or “Highlights”) are **visually impactful**, scaled to fill their container with proper styling (e.g., object-fit: cover; width: 100%; aspect-ratio if needed).
-- Do not invent URLs or use broken links.
+- Never make up a URL.
+- Always fill key visual containers (hero, feature, banners) with "object-fit: cover", full width/height.
 
-- Avoid outdated design patterns, deprecated elements, or unnecessary boilerplate.
-- Do **not** include any explanation or markdown formatting — return **only** the final production-ready HTML file.
+📌 Additional Instructions:
+- Do not include explanations or markdown formatting.
+- Output only a complete, production-ready HTML file with internal <style>.
+- Avoid outdated layouts or deprecated code.
 
-🎯 Your only job: deliver a visually polished, responsive, accessible, image-complete, and conversion-optimized landing page—nothing else.`;
+🎯 Your only job: deliver a beautiful, production-grade, responsive, accessible, and image-complete landing page.`;
 
 
 export async function POST(req: NextRequest) {
