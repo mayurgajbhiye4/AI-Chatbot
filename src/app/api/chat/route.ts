@@ -75,6 +75,7 @@ export async function POST(req: NextRequest) {
 
     const { text } = await generateText({
       model: google("models/gemini-2.0-flash"),
+      temperature: 0.8,
       prompt: fullPrompt,
     });
 
