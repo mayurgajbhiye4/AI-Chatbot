@@ -79,7 +79,7 @@ export default function Page() {
           </div>
         </Panel>  
         <PanelResizeHandle className="w-2 bg-muted cursor-col-resize" />
-        <Panel className="flex flex-col h-full min-h-0">
+        <Panel defaultSize={70} className="flex flex-col h-full min-h-0">
           <div className="flex-1 flex flex-col min-h-0">
             <LivePreview code={previewCode} />
           </div>
