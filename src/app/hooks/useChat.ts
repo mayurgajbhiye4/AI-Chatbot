@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { toast } from "sonner";
 
-interface Message {
+export interface Message {
   id: string;
   content: string;
   isUser: boolean;

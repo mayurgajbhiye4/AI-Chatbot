@@ -8,6 +8,12 @@ import type { AuthOptions } from "next-auth";
 
 const prisma = new PrismaClient();
 
+type SessionUser = {
+  id?: string;
+  email?: string | null;
+  name?: string | null;
+};
+
 export const authOptions: AuthOptions = {
   adapter: PrismaAdapter(prisma),
   providers: [
@@ -66,7 +72,7 @@ export const authOptions: AuthOptions = {
           id: token.id,
           email: token.email,
           name: token.name,
-        } as any;
+        } as SessionUser;
       }
       return session;
     },

@@ -1,6 +1,6 @@
 import { Button } from "../components/ui/button";
 import { RefreshCw, ExternalLink } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 interface LivePreviewProps {
   code: string;
@@ -22,7 +22,7 @@ export function LivePreview({ code }: LivePreviewProps) {
     }
   };
 
-  const updateIframeContent = () => {
+  const updateIframeContent = useCallback(() => {
     if (iframeRef.current && code) {
       const iframe = iframeRef.current;
       const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
@@ -32,7 +32,7 @@ export function LivePreview({ code }: LivePreviewProps) {
         iframeDoc.close();
       }
     }
-  };
+  }, [code]);
 
   const openInNewTab = () => {
     const newWindow = window.open();
@@ -44,7 +44,7 @@ export function LivePreview({ code }: LivePreviewProps) {
 
   useEffect(() => {
     updateIframeContent();
-  }, [code]);
+  }, [updateIframeContent]);
 
   return (
     <div className="flex flex-col h-full min-h-0">

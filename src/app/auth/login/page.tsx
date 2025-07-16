@@ -51,7 +51,7 @@ export default function LoginPage() {
         {error && <div className="text-red-500 text-sm">{error}</div>}
         <Button type="submit" className="w-full">Login</Button>
         <div className="text-center text-sm mt-2">
-          Don't have an account? <a href="/auth/signup" className="underline">Sign up</a>
+          Don&apos;t have an account? <a href="/auth/signup" className="underline">Sign up</a>
         </div>
       </form>
     </div>

@@ -10,6 +10,7 @@ import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { Button } from "./components/ui/button";
 import { PanelGroup, Panel, PanelResizeHandle } from "react-resizable-panels";
+import type { Message } from "./hooks/useChat";
 
 export default function Page() {
   const { messages, sendMessage, isLoading } = useChat();
@@ -60,7 +61,7 @@ export default function Page() {
 
             <ScrollArea className="flex-1">
               <div className="divide-y">
-                {messages.map((message: any) => (
+                {messages.map((message: Message) => (
                   <ChatMessage
                     key={message.id}
                     message={message}
