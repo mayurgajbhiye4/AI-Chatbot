@@ -10,6 +10,7 @@ TechLander is a full-stack web application that uses AI to generate beautiful, p
 - **Authentication**: Sign up and log in with email and password (securely hashed with bcryptjs).
 - **Dark/Light Mode**: Toggle between light, dark, or system themes.
 - **Modern UI**: Built with ShadcnUI and Radix UI for a polished, accessible experience.
+- **Configurable AI Creativity**: The AI generation supports a "temperature" parameter, allowing you to control how creative or deterministic the responses are. (Higher values = more creative, lower = more focused)
 
 ## Extra Features & Bonus Implementations
 
@@ -20,6 +21,7 @@ TechLander is a full-stack web application that uses AI to generate beautiful, p
 - **User Experience**: Toast notifications for errors, success, and actions (copy/download).
 - **Panel Layout**: Resizable panels for chat and preview, inspired by modern design tools.
 - **Session Management**: JWT-based sessions for secure authentication.
+- **AI Temperature Control**: You can adjust the "temperature" parameter in the backend code (see "/src/app/api/chat/route.ts") to make the AI more creative (e.g., "temperature: 0.8") or more deterministic (e.g.,"temperature: 0.2").
 
 ## Getting Started
 
