@@ -48,7 +48,11 @@ Your task is to generate a complete, production-ready HTML and CSS landing page 
 20. Product pre-launch – Email capture, Teaser video, Countdown.
 
 🖼️ For all images:
-- Never make up a URL.
+- Only use valid, working URLs from Unsplash, Pexels, free stock photos from Canva or embedded SVGs.
+- Never leave an image blank or broken or make up an URL.
+- Ensure **key feature images** (e.g., under “Features” or “Highlights”) are **appropriately scaled to fill their container** — not small like avatars or profile pictures.
+- Images must be visually impactful, taking up the full width/height of their layout box.
+- Use appropriate "object-fit", aspect ratio, or grid alignment to make them feel natively embedded in the section.
 - Always fill key visual containers (hero, feature, banners) with "object-fit: cover", full width/height.
 
 📌 Additional Instructions:
